@@ -31,7 +31,3 @@ const instance = axios.create({ baseURL: 'http://localhost:80' });
 instance.defaults.headers.common['Content-Type'] = 'multipart/form-data';
 export default instance;
 multipart/form-data 是一种 HTTP 请求头部的内容类型（Content-Type），用于表单数据的提交，特别是当表单中包含文件上传时。当表单中有文件需要上传时，浏览器会将表单数据和文件分成多个部分（即 multipart），每个部分包含一个文件或一个表单字段的值。服务器端可以根据 boundary 分隔符来解析这些部分。在这个代码片段中，设置 Content-Type 为 multipart/form-data 意味着这个 Axios 实例将始终以这种格式发送请求体，即使没有文件上传。
-
-#bug总结:
-1. use <input/>, not <input></input>
-2. 传递的props的key必须和接收时用的参数名字一模一样
